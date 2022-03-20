@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <!-- https://hamaguri.sakura.ne.jp/mainasu2.html -->
+  <head>
+    <title>بحش مڤلس</title>
+    <style>
+      /* .touhaba {
+        font-family: monospace;
+      } */
+    </style>
+    <!-- jQuery, jQuery UI -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
+    <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+    <script>
+      MathJax = {
+        chtml: {
+          matchFontHeight: false
+        },
+      };
+    </script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js'>
+    </script>
+  </head>
+  <body>
+    <!-- 翻字一覧表 -->
+    <table border='0'>
+      <tr>
+        <!-- ひとつめ -->
+        <td>
+          <table>
+            <tr>
+              <th>文字</th>
+              <th>翻字</th>
+            </tr>
+            <tr>
+              <td>ا</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>ب</td>
+              <td>b</td>
+            </tr>
+            <tr>
+              <td>پ</td>
+              <td>p</td>
+            </tr>
+            <tr>
+              <td>ت</td>
+              <td>t</td>
+            </tr>
+            <tr>
+              <td>ث</td>
+              <td>T, tx, to</td>
+            </tr>
+            <tr>
+              <td>ج</td>
+              <td>j</td>
+            </tr>
+            <tr>
+              <td>چ</td>
+              <td>C, cx, co</td>
+            </tr>
+            <tr>
+              <td>ح</td>
+              <td>h</td>
+            </tr>
+            <tr>
+              <td>خ</td>
+              <td>K, kx, ko</td>
+            </tr>
+            <tr>
+              <td>څ</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>د</td>
+              <td>d</td>
+            </tr>
+            <tr>
+              <td>ذ</td>
+              <td>D, dx, do</td>
+            </tr>
+            <tr>
+              <td>ر</td>
+              <td>r</td>
+            </tr>
+            <tr>
+              <td>ز</td>
+              <td>z</td>
+            </tr>
+          </table>
+        </td>
+        <!-- ふたつめ -->
+        <td>
+          <table>
+            <tr>
+              <th>文字</th>
+              <th>翻字</th>
+            </tr>
+            <tr>
+              <td>س</td>
+              <td>s</td>
+            </tr>
+            <tr>
+              <td>ش</td>
+              <td>S, sx, so</td>
+            </tr>
+            <tr>
+              <td>ع</td>
+              <td>q</td>
+            </tr>
+            <tr>
+              <td>غ</td>
+              <td>G, gx, go</td>
+            </tr>
+            <tr>
+              <td>ڠ</td>
+              <td>N, nx, no</td>
+            </tr>
+            <tr>
+              <td>ف</td>
+              <td>f</td>
+            </tr>
+            <tr>
+              <td>ڤ</td>
+              <td>v</td>
+            </tr>
+            <tr>
+              <td>ک</td>
+              <td>k</td>
+            </tr>
+            <tr>
+              <td>گ</td>
+              <td>g</td>
+            </tr>
+            <tr>
+              <td>ل</td>
+              <td>l</td>
+            </tr>
+            <tr>
+              <td>م</td>
+              <td>m</td>
+            </tr>
+            <tr>
+              <td>ن</td>
+              <td>n</td>
+            </tr>
+            <tr>
+              <td>و</td>
+              <td>w</td>
+            </tr>
+            <tr>
+              <td>ی</td>
+              <td>y</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td>
+                <!-- 入力欄 -->
+                入力欄<br>
+                <textarea id='theInput' class='theTextarea' placeholder="bhS mvls"></textarea>
+              </td>
+            </tr>
+            <tr style='height: 20pt;'>
+            </tr>
+            <tr>
+              <td>
+                <!-- 出力 -->
+                出力<br>
+                <textarea id='theOutput' class='theTextarea' placeholder="بحش مڤلس"></textarea>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- jQuery -->
+    <script type='text/javascript'>
+      // 基本設定
+      $('tr').attr({'align': 'center'});
+      $('tr').attr({'valign': 'top'});
+      $('.theTextarea').css({'width': '200pt'});
+      $('.theTextarea').css({'height': '90pt'});
+      $('.theTextarea').css({'font-size': '120%'});
+
+      // 起動時に実行
+      $(function() {
+        // setDataTableBN2();
+      });
+
+      // 文字を変換する関数
+      function toArab(scr) {
+        let scrArab = '';
+        switch (scr) {
+          case 'a':
+            scrArab = 'ا';
+            break;
+          case 'b':
+            scrArab = 'ب';
+            break;
+          case 'p':
+            scrArab = 'پ';
+            break;
+          case 't':
+            scrArab = 'ت';
+            break;
+          case 'T':
+            scrArab = 'ث';
+            break;
+          case 'j':
+            scrArab = 'ج';
+            break;
+          case 'C':
+            scrArab = 'چ';
+            break;
+          case 'h':
+            scrArab = 'ح';
+            break;
+          case 'K':
+            scrArab = 'خ';
+            break;
+          case 'c':
+            scrArab = 'څ';
+            break;
+          case 'd':
+            scrArab = 'د';
+            break;
+          case 'D':
+            scrArab = 'ذ';
+            break;
+          case 'r':
+            scrArab = 'ر';
+            break;
+          case 'z':
+            scrArab = 'ز';
+            break;
+          case 's':
+            scrArab = 'س';
+            break;
+          case 'S':
+            scrArab = 'ش';
+            break;
+          case 'q':
+            scrArab = 'ع';
+            break;
+          case 'G':
+            scrArab = 'غ';
+            break;
+          case 'N':
+            scrArab = 'ڠ';
+            break;
+          case 'f':
+            scrArab = 'ف';
+            break;
+          case 'v':
+            scrArab = 'ڤ';
+            break;
+          case 'k':
+            scrArab = 'ک';
+            break;
+          case 'g':
+            scrArab = 'گ';
+            break;
+          case 'l':
+            scrArab = 'ل';
+            break;
+          case 'm':
+            scrArab = 'م';
+            break;
+          case 'n':
+            scrArab = 'ن';
+            break;
+          case 'w':
+            scrArab = 'و';
+            break;
+          case 'y':
+            scrArab = 'ی';
+            break;
+          default:
+            scrArab = scr;
+            break;
+        }
+        return scrArab;
+      }
+
+      // 入力欄が書きかえられたら実行
+      $('#theInput').change(function() {
+        // 確定して初めて反応する
+        // console.log('Change!');
+        // 入力内容とその長さを取得
+        let theVal = $(this).val();
+        let theLen = theVal.length;
+        console.log(theVal);
+        // console.log(theLen);
+        // 文字を取り出した配列
+        let arrScr = []
+        let arrArab = []
+        for (var i = 0; i < theLen; i++) {
+          let theScr = theVal.charAt(i);
+          // console.log(theScr);
+          let theArab = toArab(theScr);
+          // console.log(theArab);
+          arrScr.push(theScr);
+          arrArab.push(theArab);
+        }
+        let valArab = arrArab.join("");
+        // console.log(arrScr);
+        console.log(valArab);
+        // 出力する
+        $('#theOutput').val(valArab);
+      });
+
+    </script>
+  </body>
+</html>
