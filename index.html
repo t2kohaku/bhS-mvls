@@ -26,7 +26,7 @@
     <!-- 翻字一覧表 -->
     <table border='0'>
       <tr>
-        <!-- ひとつめ -->
+        <!-- 1つめ -->
         <td>
           <table>
             <tr>
@@ -51,7 +51,7 @@
             </tr>
             <tr>
               <td>ث</td>
-              <td>T, tx, to</td>
+              <td>T</td>
             </tr>
             <tr>
               <td>ج</td>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
               <td>چ</td>
-              <td>C, cx, co</td>
+              <td>C</td>
             </tr>
             <tr>
               <td>ح</td>
@@ -67,7 +67,7 @@
             </tr>
             <tr>
               <td>خ</td>
-              <td>K, kx, ko</td>
+              <td>K</td>
             </tr>
             <tr>
               <td>څ</td>
@@ -79,7 +79,7 @@
             </tr>
             <tr>
               <td>ذ</td>
-              <td>D, dx, do</td>
+              <td>D</td>
             </tr>
             <tr>
               <td>ر</td>
@@ -89,9 +89,13 @@
               <td>ز</td>
               <td>z</td>
             </tr>
+            <tr>
+              <td>س</td>
+              <td>s</td>
+            </tr>
           </table>
         </td>
-        <!-- ふたつめ -->
+        <!-- 2つめ -->
         <td>
           <table>
             <tr>
@@ -99,12 +103,8 @@
               <th>翻字</th>
             </tr>
             <tr>
-              <td>س</td>
-              <td>s</td>
-            </tr>
-            <tr>
               <td>ش</td>
-              <td>S, sx, so</td>
+              <td>S</td>
             </tr>
             <tr>
               <td>ع</td>
@@ -112,11 +112,11 @@
             </tr>
             <tr>
               <td>غ</td>
-              <td>G, gx, go</td>
+              <td>G</td>
             </tr>
             <tr>
               <td>ڠ</td>
-              <td>N, nx, no</td>
+              <td>N</td>
             </tr>
             <tr>
               <td>ف</td>
@@ -154,8 +154,17 @@
               <td>ی</td>
               <td>y</td>
             </tr>
+            <tr>
+              <td>ء</td>
+              <td>x</td>
+            </tr>
+            <tr>
+              <td>؟</td>
+              <td>?</td>
+            </tr>
           </table>
         </td>
+        <!-- input -->
         <td>
           <table>
             <tr>
@@ -280,6 +289,12 @@
             break;
           case 'y':
             scrArab = 'ی';
+            break;
+          case 'x':
+            scrArab = 'ء';
+            break;
+          case '?':
+            scrArab = '؟';
             break;
           default:
             scrArab = scr;
