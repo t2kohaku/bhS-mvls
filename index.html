@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <!-- https://hamaguri.sakura.ne.jp/mainasu2.html -->
   <head>
     <title>بحش مڤلس</title>
     <style>
@@ -93,6 +92,10 @@
               <td>س</td>
               <td>s</td>
             </tr>
+            <tr>
+              <td>ش</td>
+              <td>S</td>
+            </tr>
           </table>
         </td>
         <!-- 2つめ -->
@@ -101,10 +104,6 @@
             <tr>
               <th>文字</th>
               <th>翻字</th>
-            </tr>
-            <tr>
-              <td>ش</td>
-              <td>S</td>
             </tr>
             <tr>
               <td>ع</td>
@@ -159,6 +158,14 @@
               <td>x</td>
             </tr>
             <tr>
+              <td>،</td>
+              <td>,</td>
+            </tr>
+            <tr>
+              <td>؛</td>
+              <td>.</td>
+            </tr>
+            <tr>
               <td>؟</td>
               <td>?</td>
             </tr>
@@ -196,6 +203,7 @@
       $('.theTextarea').css({'width': '200pt'});
       $('.theTextarea').css({'height': '90pt'});
       $('.theTextarea').css({'font-size': '120%'});
+      $('.theTextarea').css({'font-family': 'serif'});
 
       // 起動時に実行
       $(function() {
@@ -292,6 +300,12 @@
             break;
           case 'x':
             scrArab = 'ء';
+            break;
+          case ',':
+            scrArab = '،';
+          break;
+          case '.':
+            scrArab = '؛';
             break;
           case '?':
             scrArab = '؟';
